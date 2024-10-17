@@ -58,8 +58,6 @@ export default function Navbar() {
               Contact
             </Link>
           </Stack>
-
-          
         </Box>
       )}
     </Box>
