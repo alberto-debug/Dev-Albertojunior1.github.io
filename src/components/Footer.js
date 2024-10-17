@@ -26,7 +26,7 @@ export default function Footer() {
         <Link fontSize="xs" _hover={{ textDecoration: 'underline' }} href="#">
           Privacy    
         </Link>
-      </Flex>
+      </Flex>   
     </Box>
   );
 }
