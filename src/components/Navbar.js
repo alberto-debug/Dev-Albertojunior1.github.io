@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState } from 'react';
 import { Box, Flex, Link, IconButton, Stack } from '@chakra-ui/react';
@@ -12,20 +12,28 @@ export default function Navbar() {
   };
 
   return (
-    <Box bg="white" boxShadow="md" px={4}>
+    <Box bg="Orange" boxShadow="md" px={8} /* Adicionando mais padding lateral */>
       <Flex h={16} alignItems="center" justifyContent="space-between">
-        <Link href="/" fontSize="xl" fontWeight="bold" color="gray.800">
+        <Link 
+          href="/" 
+          fontSize="xl" 
+          fontWeight="bold" 
+          color="gray.800" 
+          ml={"50px"} /* Aproximando o logo mais para dentro */
+        >
           Logo
         </Link>
         <IconButton
           size="md"
+          bg={"orange"}
+          _hover={{ color: 'blue.500' }}
           icon={isOpen ? <FiX /> : <FiMenu />}
           aria-label="Toggle menu"
           display={{ md: 'none' }}
           onClick={toggleMenu}
         />
-        <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-          <Stack direction="row" spacing={4}>
+        <Flex display={{ base: 'none', md: 'flex' }}  ml={10} mr={"190px"} /* Ajustando os links mais para dentro */>
+          <Stack direction="row"  spacing={6} /* Ajustando o espaçamento entre os links */>
             <Link href="/" color="gray.800" _hover={{ color: 'blue.500' }}>
               Home
             </Link>
