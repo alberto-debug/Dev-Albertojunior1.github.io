@@ -150,6 +150,7 @@ const FeaturesSection = () => {
             </GridItem>
           </Grid>
         </Container>
+
       </Box>
 
       {/* Download Section */}
