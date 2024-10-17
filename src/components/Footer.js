@@ -12,7 +12,7 @@ export default function Footer() {
       borderTop="1px solid"
       borderColor="gray.200"  
       display="flex"
-      flexDirection={{ base: 'column', sm: 'row' }}
+      flexDirection={{ base: 'column', sm: 'row' }}   
       alignItems="center"
       gap={2}  
     >
