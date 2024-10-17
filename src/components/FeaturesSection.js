@@ -1,5 +1,6 @@
 import { QrCode, Menu, CreditCard, Smartphone } from "lucide-react";
 import { Button, Box, Container, Heading, Text, Grid, GridItem, VStack, Flex } from "@chakra-ui/react";
+import Footer from "./Footer";
 
 const FeaturesSection = () => {
   return (
@@ -186,6 +187,7 @@ const FeaturesSection = () => {
         </Button>
       </Box>
     </VStack>
+
   </Container>
 </Box>
 
