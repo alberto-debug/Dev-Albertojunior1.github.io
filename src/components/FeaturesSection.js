@@ -12,7 +12,19 @@ const FeaturesSection = () => {
           </Heading>
           <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={8}>
             <GridItem>
-              <Box bg="white" _dark={{ bg: "gray.700" }} boxShadow="md" borderRadius="md" p={6} textAlign="center">
+              <Box
+                bg="white"
+                _dark={{ bg: "gray.700" }}
+                boxShadow="md"
+                borderRadius="md"
+                p={6}
+                textAlign="center"
+                transition="all 0.3s ease"
+                _hover={{
+                  transform: "translateY(-10px)",
+                  boxShadow: "0px -6px 15px rgba(0, 0, 0, 0.2)",
+                }}
+              >
                 <Flex justifyContent="center" alignItems="center" mb={4}>
                   <QrCode size={48} />
                 </Flex>
@@ -21,7 +33,19 @@ const FeaturesSection = () => {
               </Box>
             </GridItem>
             <GridItem>
-              <Box bg="white" _dark={{ bg: "gray.700" }} boxShadow="md" borderRadius="md" p={6} textAlign="center">
+              <Box
+                bg="white"
+                _dark={{ bg: "gray.700" }}
+                boxShadow="md"
+                borderRadius="md"
+                p={6}
+                textAlign="center"
+                transition="all 0.3s ease"
+                _hover={{
+                  transform: "translateY(-10px)",
+                  boxShadow: "0px -6px 15px rgba(0, 0, 0, 0.2)",
+                }}
+              >
                 <Flex justifyContent="center" alignItems="center" mb={4}>
                   <Menu size={48} />
                 </Flex>
@@ -30,7 +54,19 @@ const FeaturesSection = () => {
               </Box>
             </GridItem>
             <GridItem>
-              <Box bg="white" _dark={{ bg: "gray.700" }} boxShadow="md" borderRadius="md" p={6} textAlign="center">
+              <Box
+                bg="white"
+                _dark={{ bg: "gray.700" }}
+                boxShadow="md"
+                borderRadius="md"
+                p={6}
+                textAlign="center"
+                transition="all 0.3s ease"
+                _hover={{
+                  transform: "translateY(-10px)",
+                  boxShadow: "0px -6px 15px rgba(0, 0, 0, 0.2)",
+                }}
+              >
                 <Flex justifyContent="center" alignItems="center" mb={4}>
                   <CreditCard size={48} />
                 </Flex>
@@ -50,7 +86,19 @@ const FeaturesSection = () => {
           </Heading>
           <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={8}>
             <GridItem>
-              <Box bg="white" _dark={{ bg: "gray.700" }} boxShadow="md" borderRadius="md" p={6} textAlign="center">
+              <Box
+                bg="white"
+                _dark={{ bg: "gray.700" }}
+                boxShadow="md"
+                borderRadius="md"
+                p={6}
+                textAlign="center"
+                transition="all 0.3s ease"
+                _hover={{
+                  transform: "translateY(-10px)",
+                  boxShadow: "0px -6px 15px rgba(0, 0, 0, 0.2)",
+                }}
+              >
                 <Flex justifyContent="center" alignItems="center" mb={4}>
                   <QrCode size={48} />
                 </Flex>
@@ -59,7 +107,19 @@ const FeaturesSection = () => {
               </Box>
             </GridItem>
             <GridItem>
-              <Box bg="white" _dark={{ bg: "gray.700" }} boxShadow="md" borderRadius="md" p={6} textAlign="center">
+              <Box
+                bg="white"
+                _dark={{ bg: "gray.700" }}
+                boxShadow="md"
+                borderRadius="md"
+                p={6}
+                textAlign="center"
+                transition="all 0.3s ease"
+                _hover={{
+                  transform: "translateY(-10px)",
+                  boxShadow: "0px -6px 15px rgba(0, 0, 0, 0.2)",
+                }}
+              >
                 <Flex justifyContent="center" alignItems="center" mb={4}>
                   <Menu size={48} />
                 </Flex>
@@ -68,7 +128,19 @@ const FeaturesSection = () => {
               </Box>
             </GridItem>
             <GridItem>
-              <Box bg="white" _dark={{ bg: "gray.700" }} boxShadow="md" borderRadius="md" p={6} textAlign="center">
+              <Box
+                bg="white"
+                _dark={{ bg: "gray.700" }}
+                boxShadow="md"
+                borderRadius="md"
+                p={6}
+                textAlign="center"
+                transition="all 0.3s ease"
+                _hover={{
+                  transform: "translateY(-10px)",
+                  boxShadow: "0px -6px 15px rgba(0, 0, 0, 0.2)",
+                }}
+              >
                 <Flex justifyContent="center" alignItems="center" mb={4}>
                   <CreditCard size={48} />
                 </Flex>
@@ -82,27 +154,28 @@ const FeaturesSection = () => {
 
       {/* Download Section */}
       <Box py={{ base: 12, md: 24, lg: 32 }}>
-        <Container maxW="container.lg" px={{ base: 4, md: 6 }}>
-          <VStack spacing={4} textAlign="center">
-            <Box>
-              <Heading as="h2" fontSize={{ base: "3xl", sm: "5xl" }} mb={2}>
-                Ready to Transform Your Dining Experience?
-              </Heading>
-              <Text maxW="700px" color="gray.500" fontSize={{ base: "md", md: "xl" }} _dark={{ color: "gray.400" }}>
-                Download our app now and enjoy a seamless ordering and payment process at your favorite restaurants.
-              </Text>
-            </Box>
-            <Box>
-              <Button bg="black" color="white" _hover={{ bg: "gray.700" }} px={8} fontSize={{ base: "md", sm: "lg" }}>
-                <Smartphone className="mr-2 h-4 w-4" /> Download for iOS
-              </Button>
-              <Button bg="black" color="white" _hover={{ bg: "gray.700" }} px={8} fontSize={{ base: "md", sm: "lg" }}>
-                <Smartphone className="mr-2 h-4 w-4" /> Download for Android
-              </Button>
-            </Box>
-          </VStack>
-        </Container>
+  <Container maxW="container.lg" px={{ base: 4, md: 6 }}>
+    <VStack spacing={4} textAlign="center">
+      <Box>
+        <Heading as="h2" fontSize={{ base: "3xl", sm: "5xl" }} mb={2}>
+          Ready to Transform Your Dining Experience?
+        </Heading>
+        <Text maxW="700px" color="gray.500" fontSize={{ base: "md", md: "xl" }} _dark={{ color: "gray.400" }}>
+          Download our app now and enjoy a seamless ordering and payment process at your favorite restaurants.
+        </Text>
       </Box>
+      <Box display="flex" justifyContent="center" gap={4}>
+        <Button bg="black" color="white" _hover={{ bg: "gray.700" }} px={4} fontSize={{ base: "sm", md: "md" }}>
+          <Smartphone className="mr-2 h-4 w-4" /> Download for iOS
+        </Button>
+        <Button bg="black" color="white" _hover={{ bg: "gray.700" }} px={4} fontSize={{ base: "sm", md: "md" }}>
+          <Smartphone className="mr-2 h-4 w-4" /> Download for Android
+        </Button>
+      </Box>
+    </VStack>
+  </Container>
+</Box>
+
     </Box>
   );
 };

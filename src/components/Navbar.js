@@ -12,7 +12,7 @@ export default function Navbar() {
   };
 
   return (
-    <Box bg="Orange" boxShadow="md" px={8} /* Adicionando mais padding lateral */>
+    <Box bg="Orange"  boxShadow="md" px={8} /* Adicionando mais padding lateral */>
       <Flex h={16} alignItems="center" justifyContent="space-between">
         <Link 
           href="/" 
