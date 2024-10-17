@@ -10,7 +10,7 @@ export default function Footer() {
       py={6}
       px={{ base: 4, md: 6 }}       
       borderTop="1px solid"
-      borderColor="gray.200"
+      borderColor="gray.200"  
       display="flex"
       flexDirection={{ base: 'column', sm: 'row' }}
       alignItems="center"
