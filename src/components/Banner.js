@@ -1,48 +1,56 @@
-import React from 'react'
-import { Box, Button, Heading, Image, Input, Flex, Text } from "@chakra-ui/react"
+import React from 'react';
+import { Box, Button, Heading, Text, Flex } from "@chakra-ui/react";
+import { Smartphone } from 'react-feather'; // Ícone do Smartphone
+import { QrCode } from 'lucide-react'; // Importando o ícone QrCode do lucide-react
 
 export default function Banner() {
   return (
-    <Box position="relative" height="700px" bg="orange.400" color="white" overflow="hidden">
+    <Box position="relative" bg="orange.400" color="white" overflow="hidden" py={{ base: 12, md: 24, lg: 32, xl: 48 }}>
       <Flex
         maxW="1200px"
         mx="auto"
-        px={4}
-        py={12}
-        flexDirection={{ base: "column", md: "row" }}
+        px={{ base: 4, md: 6 }}
+        flexDirection={{ base: "column", sm: "row" }}
         alignItems="center"
+        textAlign="left"
+        spacing={4}
       >
-        {/* Imagem */}
-        <Box w={{ base: "100%", md: "50%" }} mb={{ base: 8, md: 0 }}>
-          <Image
-            src="/placeholder.svg?height=300&width=300"
-            alt="Delicious burger"
-            maxW="full"
-            h="auto"
-          />
+        {/* Ícone de QR Code à esquerda com tamanho aumentado */}
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          bg="transparent" // Fundo transparente
+          borderRadius="md"
+          p={4}
+          boxShadow="md"
+          mr={{ base: 0, sm: 4 }}
+          width="120px" // Aumentando a largura do Box
+          height="120px" // Aumentando a altura do Box
+        >
+          <QrCode className="h-16 w-16" color="white" /> {/* Usando o ícone QrCode do lucide-react */}
         </Box>
 
-        {/* Conteúdo de texto */}
-        <Box w={{ base: "100%", md: "50%" }} pl={{ md: 8 }}>
-          <Heading as="h1" size="2xl" fontWeight="bold" mb={4}>
-            Test our delicious food
+        <Box spacing={2} ml={{ base: 0, sm: 4 }}> {/* Adicionando margem à esquerda */}
+          <Heading
+            as="h1"
+            fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }}
+            fontWeight="bold"
+            mb={4}
+          >
+            Scan, Order, and Pay with Ease
           </Heading>
-          <Text fontSize="xl" mb={6}>
-            Fast delivery, fresh ingredients, and more!
+          <Text fontSize={{ base: "md", md: "xl" }} color="gray.200" maxW="700px" mx="auto" mb={6}>
+            Revolutionize your dining experience with our QR code menu and payment app.
           </Text>
 
-          {/* Campo de endereço e botão */}
-          <Flex>
-            <Input
-              placeholder="Enter your address"
-              flex="1"
-              mr={2}
-              color="black"
-              bg="white"
-              _placeholder={{ color: "gray.500" }}
-            />
-            <Button bg="white" color="orange.400" _hover={{ bg: "orange.100" }}>
-              Use current location
+          {/* Flex container for buttons - agora abaixo da descrição */}
+          <Flex mt={4} gap={4} flexDirection={{ base: "column", sm: "row" }} alignItems="center">
+            <Button bg="black" color="white" _hover={{ bg: "gray.700" }} px={8} fontSize={{ base: "md", sm: "lg" }}>
+              <Smartphone className="mr-2 h-4 w-4" /> Download for iOS
+            </Button>
+            <Button bg="black" color="white" _hover={{ bg: "gray.700" }} px={8} fontSize={{ base: "md", sm: "lg" }}>
+              <Smartphone className="mr-2 h-4 w-4" /> Download for Android
             </Button>
           </Flex>
         </Box>
@@ -58,6 +66,6 @@ export default function Banner() {
         </svg>
       </Box>
     </Box>
-  )
+  );
 }
 
