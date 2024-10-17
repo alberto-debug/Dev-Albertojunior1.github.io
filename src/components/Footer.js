@@ -14,7 +14,7 @@ export default function Footer() {
       display="flex"
       flexDirection={{ base: 'column', sm: 'row' }}
       alignItems="center"
-      gap={2}
+      gap={2}  
     >
       <Text fontSize="xs" color="Black">
         © 2024 Deli. All rights reserved.
