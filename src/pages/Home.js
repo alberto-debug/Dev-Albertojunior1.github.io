@@ -1,6 +1,7 @@
 import React from 'react';
 import HomePage from '../components/Navbar';
 import Banner from '../components/Banner';
+import FeaturesSection from '../components/FeaturesSection';
 
 const Home = () => {
   return (
@@ -8,7 +9,7 @@ const Home = () => {
       <HomePage/>
       <Banner/>
       {/* Outros componentes ou conteúdo da página */}
-      <h1>Bem-vindo à Página Inicial!</h1>
+      <FeaturesSection/>
       {/* Você pode adicionar mais conteúdo aqui */}
     </div>
   );

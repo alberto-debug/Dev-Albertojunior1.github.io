@@ -4,7 +4,7 @@ import { Smartphone } from 'react-feather'; // Ícone do Smartphone
 
 export default function Banner() {
   return (
-    <Box position="relative" bg="orange.400" color="white" overflow="hidden" py={{ base: 12, md: 24, lg: 32, xl: 48 }}>
+    <Box position="relative"  bg="orange.400" color="white" overflow="hidden" py={{ base: 12, md: 24, lg: 32, xl: 48 }}>
       <Flex
         maxW="1200px"
         mx="auto"
@@ -12,6 +12,7 @@ export default function Banner() {
         flexDirection={{ base: "column", sm: "row" }}
         alignItems="center"
         textAlign="left"
+        
         spacing={4}
       >
         {/* QR Code image */}
@@ -56,7 +57,7 @@ export default function Banner() {
       </Flex>
 
       {/* SVG com ondas na parte inferior */}
-      <Box position="absolute" bottom={0} left={0} right={0}>
+      <Box position="absolute" bottom={0} left={0} right={0} >
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0 0L60 10C120 20 240 40 360 46.7C480 53 600 47 720 43.3C840 40 960 40 1080 43.3C1200 47 1320 53 1380 56.7L1440 60V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V0Z"
