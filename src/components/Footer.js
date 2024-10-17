@@ -3,7 +3,7 @@ import { Box, Text, Flex, Link } from '@chakra-ui/react';
 
 export default function Footer() {
   return (
-    <Box
+    <Box   
       as="footer"
       w="full"
       bg={"orange"}   
