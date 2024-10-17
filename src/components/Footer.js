@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, Flex, Link } from '@chakra-ui/react';
+import { Box, Text, Flex, Link } from '@chakra-ui/react';    
 
 export default function Footer() {
   return (
