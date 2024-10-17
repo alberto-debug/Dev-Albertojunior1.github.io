@@ -24,7 +24,7 @@ export default function Footer() {
           Terms of Service
         </Link>
         <Link fontSize="xs" _hover={{ textDecoration: 'underline' }} href="#">
-          Privacy
+          Privacy    
         </Link>
       </Flex>
     </Box>
