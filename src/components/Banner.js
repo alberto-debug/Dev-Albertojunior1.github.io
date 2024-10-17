@@ -1,7 +1,6 @@
 import React from 'react';
-import { Box, Button, Heading, Text, Flex } from "@chakra-ui/react";
+import { Box, Button, Heading, Text, Flex, Image } from "@chakra-ui/react";
 import { Smartphone } from 'react-feather'; // Ícone do Smartphone
-import { QrCode } from 'lucide-react'; // Importando o ícone QrCode do lucide-react
 
 export default function Banner() {
   return (
@@ -15,7 +14,7 @@ export default function Banner() {
         textAlign="left"
         spacing={4}
       >
-        {/* Ícone de QR Code à esquerda com tamanho aumentado */}
+        {/* QR Code image */}
         <Box
           display="flex"
           alignItems="center"
@@ -23,15 +22,15 @@ export default function Banner() {
           bg="transparent" // Fundo transparente
           borderRadius="md"
           p={4}
-          boxShadow="md"
-          mr={{ base: 0, sm: 4 }}
-          width="120px" // Aumentando a largura do Box
-          height="120px" // Aumentando a altura do Box
+          mr={{ base: 0, sm: "50px" }}
+          width="550px" // Tamanho do QR Code aumentado
+          height="250px"
         >
-          <QrCode className="h-16 w-16" color="white" /> {/* Usando o ícone QrCode do lucide-react */}
+          {/* Replace the src with the actual QR code link */}
+          <Image src="https://api.qrserver.com/v1/create-qr-code/?size=550x250&data=https://example.com" alt="QR Code" />
         </Box>
 
-        <Box spacing={2} ml={{ base: 0, sm: 4 }}> {/* Adicionando margem à esquerda */}
+        <Box spacing={2} ml={{ base: 0, sm: "180px" }}> {/* Adicionando margem à esquerda */}
           <Heading
             as="h1"
             fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }}
@@ -68,4 +67,3 @@ export default function Banner() {
     </Box>
   );
 }
-
