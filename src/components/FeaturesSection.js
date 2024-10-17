@@ -161,15 +161,27 @@ const FeaturesSection = () => {
         <Heading as="h2" fontSize={{ base: "3xl", sm: "5xl" }} mb={2}>
           Ready to Transform Your Dining Experience?
         </Heading>
-        <Text maxW="700px" color="gray.500" fontSize={{ base: "md", md: "xl" }} _dark={{ color: "gray.400" }}>
+        <Text maxW="920px" color="gray.500" fontSize={{ base: "md", md: "xl" }} _dark={{ color: "gray.400" }}>
           Download our app now and enjoy a seamless ordering and payment process at your favorite restaurants.
         </Text>
       </Box>
       <Box display="flex" justifyContent="center" gap={4}>
-        <Button bg="black" color="white" _hover={{ bg: "gray.700" }} px={4} fontSize={{ base: "sm", md: "md" }}>
+        <Button
+          bg="black"
+          color="white"
+          _hover={{ bg: "gray.700" }}
+          px={{ base: 2, md: 4 }}  // Ajuste responsivo para padding
+          fontSize={{ base: "xs", md: "md" }}  // Ajuste responsivo para fontSize
+        >
           <Smartphone className="mr-2 h-4 w-4" /> Download for iOS
         </Button>
-        <Button bg="black" color="white" _hover={{ bg: "gray.700" }} px={4} fontSize={{ base: "sm", md: "md" }}>
+        <Button
+          bg="black"
+          color="white"
+          _hover={{ bg: "gray.700" }}
+          px={{ base: 2, md: 4 }}  // Ajuste responsivo para padding
+          fontSize={{ base: "xs", md: "md" }}  // Ajuste responsivo para fontSize
+        >
           <Smartphone className="mr-2 h-4 w-4" /> Download for Android
         </Button>
       </Box>
