@@ -1,13 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Sen", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Dashboard styling  */
+
+.dash--page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  height: 100vh;
+  width: 100vw;
+}
+
+.dash--top {
+  display: flex;
+  width: 327px;
+  height: 49px;
+  justify-content: space-between;
+}
+
+.options--top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #ecf0f4;
+}
+
+.text--top {
+  margin-left: -6rem;
+  font-size: small;
+}
+
+.cart--top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: #000;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.inbox-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.082);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #000;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.inbox-btn svg path {
+  fill: white;
+}
+.inbox-btn svg {
+  height: 17px;
+  transition: all 0.3s;
+}
+.msg-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #ff7622;
+  border-radius: 50%;
+  font-size: 0.7em;
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.greetings {
+  align-self: flex-start;
+  margin: 1rem 0 1rem 0;
+}
+
+.greetings span {
+  font-weight: bold;
+}
+
+.search--div {
+  display: flex;
+  align-items: center;
+  background-color: #f6f6f6;
+  width: 327px;
+  height: 62px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 10px;
+  padding: 0 20px;
+}
+
+.search--div input {
+  height: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  width: 96%;
+  margin-left: 6px;
 }
