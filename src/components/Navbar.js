@@ -62,7 +62,7 @@ export default function Navbar() {
             <Link href="/services" color="gray.800" _hover={{ color: 'blue.500' }}>
               Services
             </Link>
-            <Link href="/contact" color="gray.800" _hover={{ color: 'blue.500' }}>
+            <Link href="/Contact" color="gray.800" _hover={{ color: 'blue.500' }}>
               Contact
             </Link>
           </Stack>
