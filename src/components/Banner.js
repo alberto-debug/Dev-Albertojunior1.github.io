@@ -55,8 +55,20 @@ export default function Banner() {
             </Button>
             <Button bg="black" color="white" _hover={{ bg: "gray.700" }} px={8} fontSize={{ base: "sm", sm: "md" }}>
               <Smartphone className="mr-2 h-4 w-4" /> Download for Android
-            </Button>    
-          </Flex>
+            </Button>   
+
+            {/* Botão adicional centralizado */}
+            <Button bg="black" color="white"
+             border={"1px solid black"} boxShadow={"0px -6px 15px rgba(0, 0, 0, 0.2)"}
+              fontWeight={"bold"} _hover={{ bg: "blue.600" }}
+                px={8}
+                 fontSize={{ base: "sm", sm: "md" }}>
+                       Menu
+            </Button> 
+
+
+          </Flex>            
+
         </Box>
       </Flex>
 
