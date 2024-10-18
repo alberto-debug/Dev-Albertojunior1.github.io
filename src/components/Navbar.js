@@ -56,10 +56,10 @@ export default function Navbar() {
             <Link href="/" color="gray.800" _hover={{ color: 'blue.500' }}>
               Home
             </Link>
-            <Link href="/about" color="gray.800" _hover={{ color: 'blue.500' }}>
+            <Link href="/" color="gray.800" _hover={{ color: 'blue.500' }}>
               About
             </Link>
-            <Link href="/services" color="gray.800" _hover={{ color: 'blue.500' }}>
+            <Link href="/" color="gray.800" _hover={{ color: 'blue.500' }}>
               Services
             </Link>
             <Link href="/Contact" color="gray.800" _hover={{ color: 'blue.500' }}>
