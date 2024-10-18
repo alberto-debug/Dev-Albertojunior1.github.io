@@ -172,7 +172,7 @@ const FeaturesSection = () => {
           color="white"
           _hover={{ bg: "gray.700" }}
           px={{ base: 2, md: 4 }}  // Ajuste responsivo para padding
-          fontSize={{ base: "xs", md: "md" }}  // Ajuste responsivo para fontSize
+          fontSize={{ base: "xs", md: "md" }}  // Ajuste responsivo para fontSize    
         >
           <Smartphone className="mr-2 h-4 w-4" /> Download for iOS
         </Button>

@@ -5,7 +5,7 @@ export default function Footer() {
   return (      
     <Box       
       as="footer"
-      w="full"
+      w="full"    
       bg={"orange"}         
       py={6}
       px={{ base: 4, md: 6 }}       

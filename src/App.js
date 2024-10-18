@@ -4,7 +4,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Home from "./pages/Home"; // Create these components
 // import About from './About';     // Create these components
 // import Services from './Services'; // Create these components
-// import Contact from './Contact';   // Create these components
+import Contact from './pages/ContactUs';   // Create these components
 import Dashboard from "./pages/Dashboard";
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
         {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="contact" element={<Contact/>}/>
           {/* <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} /> */}
