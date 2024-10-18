@@ -5,6 +5,11 @@ import {
   faBasketShopping,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
+import restaurant1 from "../images/restaurant1.jpg";
+import breakfast from "../images/breakfast.jpg";
+import lunch from "../images/lunch.jpg";
+import dinner from "../images/dinner.jpg";
+import snacks from "../images/snacks.jpg";
 
 export default function Dashboard() {
   return (
@@ -29,17 +34,50 @@ export default function Dashboard() {
         <FontAwesomeIcon icon={faMagnifyingGlass} />
         <input type="text" placeholder="Search dishes, restaurants" />
       </div>
-      <div>
+      <div className="categories--div">
         <p>All Categories</p>
         <div>See All</div>
       </div>
-      <div>
+      <div className="container--div">
+        <div className="container--content">
+          <div>
+            {" "}
+            <img src={snacks} />{" "}
+          </div>
+          <p>All</p>
+        </div>
+        <div className="container--content">
+          <div>
+            <img src={breakfast} />{" "}
+          </div>
+          <p>Breakfast</p>
+        </div>
+        <div className="container--content">
+          <div>
+            <img src={lunch} />{" "}
+          </div>
+          <p>Lunch</p>
+        </div>
+        <div className="container--content">
+          <div>
+            <img src={dinner} />{" "}
+          </div>
+          <p>Dinner</p>
+        </div>
+      </div>
+      <div className="categories--div">
         <p>Open Restaurants</p>
         <div>See All</div>
       </div>
-      <div>
-        <img src="" alt="" />
-        <h2>Collins' Bar & Restaurant</h2>
+      <div className="open--restaurants">
+        <div className="restaurant--card">
+          <img src={restaurant1} alt="collins' restaurant" />
+          <h2>Collins' Bar & Restaurant</h2>
+        </div>
+        <div className="restaurant--card">
+          <img src={restaurant1} alt="collins' restaurant" />
+          <h2>Collins' Bar & Restaurant</h2>
+        </div>
       </div>
     </div>
   );

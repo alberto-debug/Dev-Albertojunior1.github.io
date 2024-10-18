@@ -25,7 +25,7 @@ code {
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  height: 100vh;
+  height: fit-content;
   width: 100vw;
 }
 
@@ -125,4 +125,68 @@ code {
   border: none;
   width: 96%;
   margin-left: 6px;
+}
+
+.categories--div {
+  margin: 2rem 0;
+  font-size: larger;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 327px;
+}
+
+.container--div {
+  display: flex;
+  width: 100%;
+  overflow: scroll;
+  height: fit-content;
+  align-items: center;
+  padding: 10px 10px 10px 0;
+}
+
+.container--content {
+  height: 60px;
+  width: fit-content;
+  background: #ffd27c;
+  border-radius: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 20px 0 10px;
+  margin-right: 6px;
+}
+
+.container--content div {
+  background-color: #f6f6f6;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.container--content img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.open--restaurants {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.restaurant--card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  width: 327px;
+  height: fit-content;
+}
+
+.restaurant--card img {
+  width: 100%;
+  border-radius: 10px;
 }
