@@ -7,6 +7,8 @@ import Home from "./pages/Home"; // Create these components
 import Contact from "./pages/ContactUs"; // Create these components
 import Dashboard from "./pages/Dashboard";
 import Order from "./pages/Order";
+import LoginPage from "./components/Login";
+import RegisterPage from "./components/Register";
 
 function App() {
   return (
@@ -15,10 +17,9 @@ function App() {
         {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="contact" element={<Contact />} />
-          {/* <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} /> */}
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/order" element={<Order />} />
         </Routes>
