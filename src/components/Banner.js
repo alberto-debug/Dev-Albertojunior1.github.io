@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, Heading, Text, Flex, Image } from "@chakra-ui/react";
+import { Box, Button, Heading, Text, Flex, Image, Link } from "@chakra-ui/react";
 import { Smartphone } from 'react-feather'; // Ícone do Smartphone
 import { color } from 'framer-motion';
 
@@ -59,13 +59,13 @@ export default function Banner() {
             </Button>   
 
             {/* Botão adicional centralizado */}
-            <Button bg="black" color="white"
-             border={"1px solid black"} boxShadow={"0px -6px 15px rgba(0, 0, 0, 0.2)"}
-              fontWeight={"bold"} _hover={{ bg: "grey"}}
-                px={8}
-                 fontSize={{ base: "sm", sm: "md" }}>
-                       Menu
-            </Button> 
+            <Link href="/dashboard" bg="black" color="white"
+                  border="1px solid black" boxShadow="0px -6px 15px rgba(0, 0, 0, 0.2)"
+                  fontWeight="bold" _hover={{ bg: "grey" }} borderRadius={"8px"}
+                  px={8} height="40px" lineHeight="40px" textAlign="center"
+                  fontSize={{ base: "sm", sm: "md" }} display="inline-block">
+                      Menu
+            </Link>
 
 
           </Flex>            
