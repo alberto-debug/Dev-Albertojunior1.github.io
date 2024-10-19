@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Box, Flex, Link, IconButton, Stack } from '@chakra-ui/react';
 import { FiMenu, FiX } from 'react-icons/fi';
+import logo from "../images/snacks.jpg";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,14 +15,8 @@ export default function Navbar() {
   return (
     <Box bg="Orange"  boxShadow="md" px={8} /* Adicionando mais padding lateral */>
       <Flex h={16} alignItems="center" justifyContent="space-between">
-        <Link 
-          href="/" 
-          fontSize="xl" 
-          fontWeight="bold" 
-          color="gray.800" 
-          ml={"50px"} /* Aproximando o logo mais para dentro */
-        >
-          Logo
+        <Link href="/" ml="50px">
+          <img src={logo} alt="Logo" style={{ width: '50px', height: '50px' }} />
         </Link>
         <IconButton
           size="md"

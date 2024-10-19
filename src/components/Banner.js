@@ -61,7 +61,7 @@ export default function Banner() {
             {/* Botão adicional centralizado */}
             <Link href="/dashboard" bg="black" color="white"
                   border="1px solid black" boxShadow="0px -6px 15px rgba(0, 0, 0, 0.2)"
-                  fontWeight="bold" _hover={{ bg: "grey" }} borderRadius={"8px"}
+                  fontWeight="bold" _hover={{ bg: "#FF7622" }} borderRadius={"8px"}
                   px={8} height="40px" lineHeight="40px" textAlign="center"
                   fontSize={{ base: "sm", sm: "md" }} display="inline-block">
                       Menu
