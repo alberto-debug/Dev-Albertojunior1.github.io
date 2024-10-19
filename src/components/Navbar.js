@@ -5,6 +5,7 @@ import { Box, Flex, Link, IconButton, Stack } from '@chakra-ui/react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import logo from "../images/snacks.jpg";
 
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
