@@ -44,10 +44,11 @@ code {
   height: 45px;
   border-radius: 50%;
   background-color: #ecf0f4;
+  font-size: x-large;
 }
 
 .text--top {
-  margin-left: -6rem;
+  margin-left: -7rem;
   font-size: small;
 }
 
@@ -138,11 +139,11 @@ code {
 
 .container--div {
   display: flex;
-  width: 100%;
+  width: 100vw;
   overflow: scroll;
   height: fit-content;
   align-items: center;
-  padding: 10px 10px 10px 0;
+  padding: 10px 10px 10px 2rem;
 }
 
 .container--content {

@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faBars,
+  faExpand,
   faBasketShopping,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
@@ -16,16 +17,18 @@ export default function Dashboard() {
     <div className="dash--page">
       <div className="dash--top">
         <div className="options--top">
-          <FontAwesomeIcon icon={faBars} />
+          <FontAwesomeIcon icon={faExpand} />{" "}
         </div>
         <div className="text--top">
-          <span style={{ color: "#FF7622" }}>DELIVER TO</span> <br /> Halal Lab
-          Office
+          <span style={{ color: "#FF7622" }}>SCAN QR</span> <br /> to place
+          order
         </div>
-        <div class="inbox-btn">
-          <FontAwesomeIcon icon={faBasketShopping} className="svgg" />
-          <span class="msg-count">2</span>
-        </div>
+        <Link to={"/order"}>
+          <div class="inbox-btn">
+            <FontAwesomeIcon icon={faBasketShopping} className="svgg" />
+            <span class="msg-count">2</span>
+          </div>
+        </Link>
       </div>
       <p className="greetings">
         Hey, <span>Good Afternoon!</span>
