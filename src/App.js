@@ -7,8 +7,8 @@ import Home from "./pages/Home"; // Create these components
 import Contact from "./pages/ContactUs"; // Create these components
 import Dashboard from "./pages/Dashboard";
 import Order from "./pages/Order";
-import LoginPage from "./components/Login";
-import RegisterPage from "./components/Register";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
   return (
