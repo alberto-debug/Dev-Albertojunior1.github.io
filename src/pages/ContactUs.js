@@ -21,6 +21,7 @@ const ContactUsPage = () => {
         overflow="hidden"
         py={{ base: 12, md: 24, lg: 32, xl: 48 }} // Medidas ajustadas para padding
       >
+        
         <Flex
           maxW="1200px"
           mx="auto"
