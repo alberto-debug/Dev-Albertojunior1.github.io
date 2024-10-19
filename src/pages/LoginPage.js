@@ -27,7 +27,7 @@ const LoginPage = () => {
 
   // Usando o useBreakpointValue para mostrar a Navbar apenas em dispositivos desktop
   const displayNavbar = useBreakpointValue({ base: "none", md: "block" });
-
+     
   return (
     <Flex direction="column" minHeight="100vh">
       <Box width="full" display={displayNavbar}>
