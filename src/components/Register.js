@@ -128,7 +128,7 @@ const RegisterPage = () => {
           size="lg"
         />
       </HStack>
-
+     
       <Text mt={4} textAlign="center">
         Já tem uma conta?{" "}
         <Link as={RouterLink} to="/login" color="teal.200">
