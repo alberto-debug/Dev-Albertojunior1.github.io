@@ -53,7 +53,7 @@ const LoginPage = () => {
         {showBanner && (
           <Box
             position="relative"
-            bg="orange.400"
+            bg="#FF7622"
             color="white"
             height={bannerHeight}
             overflow="hidden"
@@ -77,6 +77,7 @@ const LoginPage = () => {
         <Flex
           maxW="md"
           mx="auto"
+          bg={"black"}
           mt={loginMarginTop} // Ajuste da margem superior
           p={6}
           flexGrow={1}
