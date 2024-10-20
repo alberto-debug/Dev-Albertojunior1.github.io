@@ -103,5 +103,5 @@ const RegisterPage = () => {
     </Box>
   );
 };
-
+   
 export default RegisterPage;
