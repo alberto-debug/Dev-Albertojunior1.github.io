@@ -7,12 +7,9 @@ import Home from "./pages/Home"; // Create these components
 import Contact from "./pages/ContactUs"; // Create these components
 import Dashboard from "./pages/Dashboard";
 import Order from "./pages/Order";
-<<<<<<< HEAD
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
-=======
 import Camera from "./pages/camera";
->>>>>>> 306813d (update)
 
 function App() {
   return (
