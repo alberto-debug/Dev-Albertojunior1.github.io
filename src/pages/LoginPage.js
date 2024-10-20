@@ -11,63 +11,80 @@ const texts = [
 
 const LoginPage = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const [fade, setFade] = useState(true); // Controle de opacidade
+  const [fade, setFade] = useState(true);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setFade(false); // Desaparecer o texto
+      setFade(false);
       setTimeout(() => {
         setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
-        setFade(true); // Fazer o texto aparecer
-      }, 1000); // Tempo para desaparecer antes de mudar
-    }, 3000); // Mudar o texto a cada 3 segundos
+        setFade(true);
+      }, 1000);
+    }, 3000);
 
-    return () => clearInterval(intervalId); // Limpar o intervalo ao desmontar
+    return () => clearInterval(intervalId);
   }, []);
 
-  // Usando o useBreakpointValue para mostrar a Navbar apenas em dispositivos desktop
+  // Usando useBreakpointValue para mostrar a navbar apenas em dispositivos desktop
   const displayNavbar = useBreakpointValue({ base: "none", md: "block" });
-     
+
+  // Controlar se o banner é exibido apenas em dispositivos móveis
+  const showBanner = useBreakpointValue({ base: true, md: false });
+
+  // Definir a altura do banner para 35% no celular
+  const bannerHeight = useBreakpointValue({ base: "35vh", md: "auto" });
+
+  // Definir a margem superior do login para celular e desktop
+  const loginMarginTop = useBreakpointValue({ base: "-10", md: "auto" });
+
   return (
     <Flex direction="column" minHeight="100vh">
+      {/* Navbar visível apenas no desktop */}
       <Box width="full" display={displayNavbar}>
         <Navbar />
       </Box>
 
-      {/* Grid para ocupar metade da tela com o banner e metade com o login */}
-      <Grid 
-        templateRows={{ base: "1fr 1fr", md: "1fr 1fr" }} // 2 linhas de igual altura em dispositivos móveis
-        flex="1" 
+      {/* Grid para organizar o conteúdo */}
+      <Grid
+        templateRows={{ base: "35% 1fr", md: "1fr" }} // No celular, banner 35% e login 65%; no desktop, só o login
+        flex="1"
       >
-        {/* Banner grande */}
-        <Box
-          position="relative"
-          bg="orange.400"
-          color="white"
-          overflow="hidden"
-          display="flex" // Usar flexbox para centralizar o texto
-          alignItems="center" // Alinha verticalmente no centro
-          justifyContent="center" // Alinha horizontalmente no centro
-        >
-          {/* Texto animado dentro do banner */}
-          <Text
-            fontSize={{ base: "3xl", md: "4xl" }} // Tamanho do texto em dispositivos móveis
-            fontWeight="bold"
-            textAlign="center" // Centraliza o texto
-            transition="opacity 1s ease-in-out"
-            opacity={fade ? 1 : 0} // Controla a opacidade
+        {/* Banner visível apenas em dispositivos móveis */}
+        {showBanner && (
+          <Box
+            position="relative"
+            bg="orange.400"
+            color="white"
+            height={bannerHeight}
+            overflow="hidden"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
           >
-            {texts[currentTextIndex]}
-          </Text>
-        </Box>
+            <Text
+              fontSize={{ base: "3xl", md: "4xl" }}
+              fontWeight="bold"
+              textAlign="center"
+              transition="opacity 1s ease-in-out"
+              opacity={fade ? 1 : 0}
+            >
+              {texts[currentTextIndex]}
+            </Text>
+          </Box>
+        )}
 
-        {/* Seção de login */}
-        <Box maxW="md" mx="auto" p={6}>
-          {/* Div onde você pode adicionar o formulário de login */}
-          <div>
-            <Login />
-          </div>
-        </Box>
+        {/* Seção de login centralizada no desktop e ocupando o restante da tela no celular */}
+        <Flex
+          maxW="md"
+          mx="auto"
+          mt={loginMarginTop} // Ajuste da margem superior
+          p={6}
+          flexGrow={1}
+          alignItems={{ base: "flex-start", md: "center" }} // No celular, alinhado no topo
+          justifyContent="center"
+        >
+          <Login />
+        </Flex>
       </Grid>
     </Flex>
   );
