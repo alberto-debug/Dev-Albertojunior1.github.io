@@ -12,11 +12,11 @@ code {
     monospace;
 }
 
-* {
+/* * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
+} */
 
 /* Dashboard styling  */
 
@@ -31,9 +31,9 @@ code {
 
 .dash--top {
   display: flex;
-  width: 327px;
   height: 49px;
   justify-content: space-between;
+  width: clamp(327px, 327px, 900px);
 }
 
 .options--top {
@@ -139,17 +139,18 @@ code {
 
 .container--div {
   display: flex;
-  width: 100vw;
+  width: 96vw;
+  max-width: fit-content;
   overflow: scroll;
   height: fit-content;
   align-items: center;
-  padding: 10px 10px 10px 2rem;
+  padding: 10px 10px 10px 0;
+  scrollbar-width: none;
 }
 
 .container--content {
   height: 60px;
   width: fit-content;
-  background: #ffd27c;
   border-radius: 39px;
   display: flex;
   align-items: center;
@@ -174,7 +175,7 @@ code {
 
 .open--restaurants {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
@@ -182,7 +183,7 @@ code {
 .restaurant--card {
   display: flex;
   flex-direction: column;
-  margin: 1rem 0;
+  margin: 1rem 10px;
   width: 327px;
   height: fit-content;
 }

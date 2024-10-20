@@ -7,8 +7,12 @@ import Home from "./pages/Home"; // Create these components
 import Contact from "./pages/ContactUs"; // Create these components
 import Dashboard from "./pages/Dashboard";
 import Order from "./pages/Order";
+<<<<<<< HEAD
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+=======
+import Camera from "./pages/camera";
+>>>>>>> 306813d (update)
 
 function App() {
   return (
@@ -22,6 +26,7 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/order" element={<Order />} />
+          <Route path="/camera" element={<Camera />} />
         </Routes>
       </Router>
     </ChakraProvider>
