@@ -122,7 +122,7 @@ const RegisterPage = () => {
           size="lg"
         />
         <IconButton
-          aria-label="Registrar com Apple"
+          aria-label="Registrar com Apple"    
           icon={<SiApple color="#000000" />} // Ícone da Apple
           onClick={() => {/* Aqui você pode implementar a função de login com Apple */}}
           size="lg"
