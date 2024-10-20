@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Box, Button, Input, InputGroup, InputRightElement, Text, Heading, useToast, IconButton, Link } from "@chakra-ui/react";
+import { Box, Button, Input, InputGroup, InputRightElement, Text, Heading, useToast, IconButton, Link, HStack } from "@chakra-ui/react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useNavigate, Link as RouterLink } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import firebaseConfig from "../config/FirebaseConfig";
+import { SiGoogle, SiApple } from "react-icons/si"; // Importando os ícones do Google e Apple
 
 // Inicializa o Firebase
 const app = initializeApp(firebaseConfig);
@@ -94,6 +95,25 @@ const RegisterPage = () => {
       >
         Registrar
       </Button>
+
+      {/* Ícones de login com Google e Apple */}
+      <HStack spacing={4} mt={4} justify="center">
+        <IconButton
+          aria-label="Registrar com Google"
+          icon={<SiGoogle color="#DB4437" />} // Ícone do Google
+          onClick={() => {/* Aqui você pode implementar a função de login com Google */}}
+          size="lg"
+          variant="outline" // Estilo de botão de contorno
+        />
+        <IconButton
+          aria-label="Registrar com Apple"
+          icon={<SiApple color="#000000" />} // Ícone da Apple
+          onClick={() => {/* Aqui você pode implementar a função de login com Apple */}}
+          size="lg"
+          variant="outline" // Estilo de botão de contorno
+        />
+      </HStack>
+
       <Text mt={4} textAlign="center">
         Já tem uma conta?{" "}
         <Link as={RouterLink} to="/login" color="teal.200">
@@ -103,5 +123,5 @@ const RegisterPage = () => {
     </Box>
   );
 };
-   
+
 export default RegisterPage;
