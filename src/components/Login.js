@@ -3,7 +3,7 @@ import { Box, Button, Input, InputGroup, InputRightElement, Text, Heading, useTo
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useNavigate, Link as RouterLink } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import firebaseConfig from "../config/FirebaseConfig"; // Ajuste o caminho conforme necessário
+import firebaseConfig from "../config/FirebaseConfig";
 import { initializeApp } from "firebase/app";
 import Navbar from "./Navbar";
 
@@ -14,7 +14,7 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [loading, setLoading] = useState(false); // Estado de carregamento
+  const [loading, setLoading] = useState(false); 
   const toast = useToast();
   const navigate = useNavigate();
   const auth = getAuth(app);
@@ -33,7 +33,7 @@ const LoginPage = () => {
       return;
     }
 
-    setLoading(true); // Inicia o carregamento
+    setLoading(true); 
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -44,23 +44,32 @@ const LoginPage = () => {
         duration: 5000,
         isClosable: true,
       });
-      navigate("/home"); // Redireciona para a página principal após o login
+      navigate("/home");
     } catch (error) {
       toast({
         title: "Erro ao fazer login",
-        description: error.message, // Mensagem de erro do Firebase
+        description: error.message,
         status: "error",
         duration: 5000,
         isClosable: true,
       });
     } finally {
-      setLoading(false); // Finaliza o carregamento
+      setLoading(false);
     }
   };
 
   return (
-    <Box maxW="md" mx="auto" mt="8" p="6" borderWidth="1px" borderRadius="lg" boxShadow="lg">
-        
+    <Box 
+      maxW="md" 
+      mx="auto" 
+      mt="8" 
+      p="6" 
+      boxShadow="lg"
+      borderRadius={"20px"}
+      bgGradient="linear(to-br, blue.800, blue.600)"
+      bg="blue.900 0.5" // Fundo azul oceano
+      color="Black" // Texto branco para contraste
+    >
       <Heading mb={6} textAlign="center">Login</Heading>
       <Input
         placeholder="Email"
@@ -68,7 +77,9 @@ const LoginPage = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         mb={3}
-        border="1px solid #000"
+        border="1px solid white" // Borda branca
+        bg="blue.800" // Fundo do input mais escuro
+        color="white"
       />
       <InputGroup mb={3}>
         <Input
@@ -76,7 +87,9 @@ const LoginPage = () => {
           type={showPassword ? "text" : "password"}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          border="1px solid #000"
+          border="1px solid white"
+          bg="blue.800"
+          color="white"
         />
         <InputRightElement width="4.5rem">
           <IconButton
@@ -84,22 +97,24 @@ const LoginPage = () => {
             icon={showPassword ? <ViewOffIcon /> : <ViewIcon />}
             onClick={toggleShowPassword}
             variant="unstyled"
+            color="white" // Ícone branco
           />
         </InputRightElement>
       </InputGroup>
       <Button
-        bg="blue.500"
+        bg="#FF7622" // Botão teal (azul esverdeado)
         color="white"
-        width="full"
-        _hover={{ bg: "blue.600" }}
+        borderRadius={"20px"}
+        width="100px"
+        _hover={{ bg: "teal.600" }}
         onClick={handleLogin}
-        isLoading={loading} // Exibe o spinner de carregamento
+        isLoading={loading}
       >
-        {loading ? <Spinner size="sm" /> : "Login"} {/* Exibe o spinner ou texto */}
+        {loading ? <Spinner size="sm" /> : "Login"}
       </Button>
       <Text mt={4} textAlign="center">
         Não tem uma conta?{" "}
-        <Link as={RouterLink} to="/register" color="blue.500">
+        <Link as={RouterLink} to="/register" color="teal.200">
           Clique aqui para se registrar
         </Link>
       </Text>

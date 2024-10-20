@@ -25,31 +25,21 @@ const LoginPage = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  // Usando useBreakpointValue para mostrar a navbar apenas em dispositivos desktop
   const displayNavbar = useBreakpointValue({ base: "none", md: "block" });
-
-  // Controlar se o banner é exibido apenas em dispositivos móveis
   const showBanner = useBreakpointValue({ base: true, md: false });
-
-  // Definir a altura do banner para 35% no celular
   const bannerHeight = useBreakpointValue({ base: "35vh", md: "auto" });
-
-  // Definir a margem superior do login para celular e desktop
   const loginMarginTop = useBreakpointValue({ base: "-10", md: "auto" });
 
   return (
-    <Flex direction="column" minHeight="100vh">
-      {/* Navbar visível apenas no desktop */}
+    <Flex direction="column" minHeight="100vh" bg="blue.900"> {/* Cor de fundo azul oceano */}
       <Box width="full" display={displayNavbar}>
         <Navbar />
       </Box>
 
-      {/* Grid para organizar o conteúdo */}
       <Grid
-        templateRows={{ base: "35% 1fr", md: "1fr" }} // No celular, banner 35% e login 65%; no desktop, só o login
+        templateRows={{ base: "35% 1fr", md: "1fr" }}
         flex="1"
       >
-        {/* Banner visível apenas em dispositivos móveis */}
         {showBanner && (
           <Box
             position="relative"
@@ -60,6 +50,8 @@ const LoginPage = () => {
             display="flex"
             alignItems="center"
             justifyContent="center"
+            // border="4px solid white" // Borda branca
+            borderRadius="0 0 60% 60%" 
           >
             <Text
               fontSize={{ base: "3xl", md: "4xl" }}
@@ -73,15 +65,14 @@ const LoginPage = () => {
           </Box>
         )}
 
-        {/* Seção de login centralizada no desktop e ocupando o restante da tela no celular */}
         <Flex
           maxW="md"
           mx="auto"
-          bg={"black"}
-          mt={loginMarginTop} // Ajuste da margem superior
+          bg="blue.900" // Fundo azul oceano
+          mt={loginMarginTop}
           p={6}
           flexGrow={1}
-          alignItems={{ base: "flex-start", md: "center" }} // No celular, alinhado no topo
+          alignItems={{ base: "flex-start", md: "center" }}
           justifyContent="center"
         >
           <Login />
