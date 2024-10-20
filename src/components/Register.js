@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Box, Button, Input, InputGroup, InputRightElement, Text, Heading, useToast, IconButton, Link, HStack } from "@chakra-ui/react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useNavigate, Link as RouterLink } from "react-router-dom";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import firebaseConfig from "../config/FirebaseConfig";
-import { SiGoogle, SiApple } from "react-icons/si"; // Importando os ícones do Google e Apple
+import { SiGoogle, SiApple } from "react-icons/si";
 
 // Inicializa o Firebase
 const app = initializeApp(firebaseConfig);
@@ -17,6 +17,7 @@ const RegisterPage = () => {
   const toast = useToast();
   const navigate = useNavigate();
   const auth = getAuth(app);
+  const provider = new GoogleAuthProvider(); // Cria provedor do Google
 
   const toggleShowPassword = () => setShowPassword(!showPassword);
 
@@ -35,6 +36,22 @@ const RegisterPage = () => {
       toast({
         title: "Erro ao registrar",
         description: error.message,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+    }
+  };
+
+  // Handle Google Sign-In
+  const handleGoogleSignIn = async () => {
+    try {
+      await signInWithRedirect(auth, provider); // Muda para signInWithRedirect
+    } catch (error) {
+      const errorMessage = error.message;
+      toast({
+        title: "Erro ao fazer login com Google",
+        description: errorMessage,
         status: "error",
         duration: 5000,
         isClosable: true,
@@ -101,18 +118,14 @@ const RegisterPage = () => {
         <IconButton
           aria-label="Registrar com Google"
           icon={<SiGoogle color="#DB4437" />} // Ícone do Google
-          onClick={() => {/* Aqui você pode implementar a função de login com Google */}}
+          onClick={handleGoogleSignIn} // Implementa a função de login com Google
           size="lg"
-          // variant="outline"
-          // border={"0px solid #FF7622"} // Estilo de botão de contorno
         />
         <IconButton
           aria-label="Registrar com Apple"
           icon={<SiApple color="#000000" />} // Ícone da Apple
           onClick={() => {/* Aqui você pode implementar a função de login com Apple */}}
           size="lg"
-          // border={"0px solid #FF7622"}
-          // variant="outline" // Estilo de botão de contorno
         />
       </HStack>
 
@@ -124,6 +137,7 @@ const RegisterPage = () => {
       </Text>
     </Box>
   );
+
 };
 
 export default RegisterPage;

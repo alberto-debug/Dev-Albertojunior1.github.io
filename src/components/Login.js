@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import { Box, Button, Input, InputGroup, InputRightElement, Text, Heading, useToast, IconButton, Link, Spinner, HStack  } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import { Box, Button, Input, InputGroup, InputRightElement, Text, Heading, useToast, IconButton, Link, Spinner, HStack } from "@chakra-ui/react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useNavigate, Link as RouterLink } from "react-router-dom";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signInWithRedirect, GoogleAuthProvider, getRedirectResult } from "firebase/auth";
 import firebaseConfig from "../config/FirebaseConfig";
 import { initializeApp } from "firebase/app";
-import Navbar from "./Navbar";
-import { SiGoogle, SiApple } from "react-icons/si"; 
+import { SiGoogle, SiApple } from "react-icons/si";
 
 // Inicializa o Firebase
 const app = initializeApp(firebaseConfig);
@@ -19,6 +18,7 @@ const LoginPage = () => {
   const toast = useToast();
   const navigate = useNavigate();
   const auth = getAuth(app);
+  const googleProvider = new GoogleAuthProvider(); // Inicializa o provedor do Google
 
   const toggleShowPassword = () => setShowPassword(!showPassword);
 
@@ -58,6 +58,43 @@ const LoginPage = () => {
       setLoading(false);
     }
   };
+
+  // Função para login com Google
+  const handleGoogleLogin = async () => {
+    setLoading(true);
+    try {
+      await signInWithRedirect(auth, googleProvider); // Redireciona para login do Google
+    } catch (error) {
+      toast({
+        title: "Erro ao fazer login com Google",
+        description: error.message,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Função para lidar com o resultado do redirecionamento
+  useEffect(() => {
+    const fetchRedirectResult = async () => {
+      const result = await getRedirectResult(auth);
+      if (result) {
+        // O usuário foi autenticado com sucesso
+        toast({
+          title: "Login com Google realizado!",
+          description: "Você está agora logado.",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
+        navigate("/home");
+      }
+    };
+    fetchRedirectResult();
+  }, [auth, navigate, toast]);
 
   return (
     <Box 
@@ -113,14 +150,13 @@ const LoginPage = () => {
       >
         {loading ? <Spinner size="sm" /> : "Login"}
       </Button>
-       {/* Ícones de login com Google e Apple */}
-       <HStack spacing={4} mt={4} justify="center">
+      {/* Ícones de login com Google e Apple */}
+      <HStack spacing={4} mt={4} justify="center">
         <IconButton
           aria-label="Registrar com Google"
           icon={<SiGoogle color="#DB4437" />} // Ícone do Google
-          onClick={() => {/* Aqui você pode implementar a função de login com Google */}}
+          onClick={handleGoogleLogin} // Chama a função de login com Google
           size="lg"
-          
           border={"1px solid white"} // Estilo de botão de contorno
         />
         <IconButton
@@ -129,7 +165,6 @@ const LoginPage = () => {
           onClick={() => {/* Aqui você pode implementar a função de login com Apple */}}
           size="lg"
           border={"1px solid white"}
-          
         />
       </HStack>
       <Text mt={4} textAlign="center">
