@@ -103,13 +103,15 @@ const RegisterPage = () => {
           icon={<SiGoogle color="#DB4437" />} // Ícone do Google
           onClick={() => {/* Aqui você pode implementar a função de login com Google */}}
           size="lg"
-          variant="outline" // Estilo de botão de contorno
+          variant="outline"
+          border={"0px solid #FF7622"} // Estilo de botão de contorno
         />
         <IconButton
           aria-label="Registrar com Apple"
           icon={<SiApple color="#000000" />} // Ícone da Apple
           onClick={() => {/* Aqui você pode implementar a função de login com Apple */}}
           size="lg"
+          border={"0px solid #FF7622"}
           variant="outline" // Estilo de botão de contorno
         />
       </HStack>
