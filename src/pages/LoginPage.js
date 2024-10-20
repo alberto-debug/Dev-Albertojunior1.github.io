@@ -28,8 +28,7 @@ const LoginPage = () => {
   const displayNavbar = useBreakpointValue({ base: "none", md: "block" });
   const showBanner = useBreakpointValue({ base: true, md: false });
   const bannerHeight = useBreakpointValue({ base: "35vh", md: "auto" });
-  const loginMarginTop = useBreakpointValue({ base: "-10", md: "auto" });
-
+  
   return (
     <Flex direction="column" minHeight="100vh" bg="blue.900"> {/* Cor de fundo azul oceano */}
       <Box width="full" display={displayNavbar}>
@@ -50,7 +49,6 @@ const LoginPage = () => {
             display="flex"
             alignItems="center"
             justifyContent="center"
-            // border="4px solid white" // Borda branca
             borderRadius="0 0 60% 60%" 
           >
             <Text
@@ -65,15 +63,15 @@ const LoginPage = () => {
           </Box>
         )}
 
+        {/* Flex para centralizar o componente de Login no desktop */}
         <Flex
           maxW="md"
           mx="auto"
           bg="blue.900" // Fundo azul oceano
-          mt={loginMarginTop}
           p={6}
           flexGrow={1}
-          alignItems={{ base: "flex-start", md: "center" }}
-          justifyContent="center"
+          alignItems={{ base: "flex-start", md: "-10" }} // No celular, alinhado ao topo; no desktop, centralizado verticalmente
+          justifyContent="center" // Alinhamento horizontal central
         >
           <Login />
         </Flex>

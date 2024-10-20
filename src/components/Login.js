@@ -77,7 +77,7 @@ const LoginPage = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         mb={3}
-        border="1px solid white" // Borda branca
+        border="1px solid grey" // Borda branca
         bg="blue.800" // Fundo do input mais escuro
         color="white"
       />
@@ -87,7 +87,7 @@ const LoginPage = () => {
           type={showPassword ? "text" : "password"}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          border="1px solid white"
+          border="1px solid grey"
           bg="blue.800"
           color="white"
         />

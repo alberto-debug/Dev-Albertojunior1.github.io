@@ -3,9 +3,8 @@ import { Box, Button, Input, InputGroup, InputRightElement, Text, Heading, useTo
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useNavigate, Link as RouterLink } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-// import firebaseConfig from "../config/FirebaseConfig"; // Ajuste o caminho conforme necessário
 import { initializeApp } from "firebase/app";
-import firebaseConfig from "../config/FirebaseConfig"
+import firebaseConfig from "../config/FirebaseConfig";
 
 // Inicializa o Firebase
 const app = initializeApp(firebaseConfig);
@@ -34,7 +33,7 @@ const RegisterPage = () => {
     } catch (error) {
       toast({
         title: "Erro ao registrar",
-        description: error.message, // Mensagem de erro do Firebase
+        description: error.message,
         status: "error",
         duration: 5000,
         isClosable: true,
@@ -43,7 +42,17 @@ const RegisterPage = () => {
   };
 
   return (
-    <Box maxW="md" mx="auto" mt="8" p="6" borderWidth="1px" borderRadius="lg" boxShadow="lg">
+    <Box 
+      maxW="md" 
+      mx="auto" 
+      mt="8" 
+      p="6" 
+      boxShadow="lg"
+      borderRadius="20px"
+      bgGradient="linear(to-br, blue.800, blue.600)" // Estilo igual ao LoginPage
+      bg="blue.900" // Fundo azul oceano
+      color="white" // Texto branco para contraste
+    >
       <Heading mb={6} textAlign="center">Registrar</Heading>
       <Input
         placeholder="Email"
@@ -51,7 +60,9 @@ const RegisterPage = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         mb={3}
-        border="1px solid #000"
+        border="1px solid grey" // Borda da mesma cor
+        bg="blue.800" // Fundo do input mais escuro
+        color="white"
       />
       <InputGroup mb={3}>
         <Input
@@ -59,7 +70,9 @@ const RegisterPage = () => {
           type={showPassword ? "text" : "password"}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          border="1px solid #000"
+          border="1px solid grey"
+          bg="blue.800"
+          color="white"
         />
         <InputRightElement width="4.5rem">
           <IconButton
@@ -67,21 +80,23 @@ const RegisterPage = () => {
             icon={showPassword ? <ViewOffIcon /> : <ViewIcon />}
             onClick={toggleShowPassword}
             variant="unstyled"
+            color="white" // Ícone branco
           />
         </InputRightElement>
       </InputGroup>
       <Button
-        bg="green.500"
+        bg="#FF7622" // Botão laranja
         color="white"
-        width="full"
-        _hover={{ bg: "green.600" }}
+        borderRadius="20px"
+        width="100px"
+        _hover={{ bg: "orange.600" }} // Alterar a cor no hover
         onClick={handleRegister}
       >
         Registrar
       </Button>
       <Text mt={4} textAlign="center">
         Já tem uma conta?{" "}
-        <Link as={RouterLink} to="/login" color="blue.500">
+        <Link as={RouterLink} to="/login" color="teal.200">
           Clique aqui para fazer login
         </Link>
       </Text>
