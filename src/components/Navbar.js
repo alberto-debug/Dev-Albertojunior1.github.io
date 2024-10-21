@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Box, Flex, Link, IconButton, Stack } from '@chakra-ui/react';
 import { FiMenu, FiX } from 'react-icons/fi';
-import logo from "../images/deli_1_-removebg-preview.png";
+import deliImage from '../images/deli_1_-removebg-preview.png';
 
 
 
@@ -18,7 +18,7 @@ export default function Navbar() {
     <Box bg="#FF7622"  boxShadow="md" px={8} /* Adicionando mais padding lateral */>
       <Flex h={16} alignItems="center" justifyContent="space-between">
         <Link href="/" ml="50px" >
-          <img src={logo} alt="Logo" style={{ width: '60px', height: '60px' }} />
+          <img src={deliImage} alt="Logo" style={{ width: '60px', height: '60px' }} />
         </Link>
         <IconButton
           size="md"
