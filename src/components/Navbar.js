@@ -6,6 +6,7 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import logo from "../images/deli_1_-removebg-preview.png";
 
 
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,14 +15,14 @@ export default function Navbar() {
   };
 
   return (
-    <Box bg="Orange"  boxShadow="md" px={8} /* Adicionando mais padding lateral */>
+    <Box bg="#FF7622"  boxShadow="md" px={8} /* Adicionando mais padding lateral */>
       <Flex h={16} alignItems="center" justifyContent="space-between">
         <Link href="/" ml="50px" >
           <img src={logo} alt="Logo" style={{ width: '60px', height: '60px' }} />
         </Link>
         <IconButton
           size="md"
-          bg={"orange"}
+          bg={"#FF7622"}
           _hover={{ color: 'blue.500' }}
           icon={isOpen ? <FiX /> : <FiMenu />}
           aria-label="Toggle menu"
@@ -30,19 +31,17 @@ export default function Navbar() {
         />
         <Flex display={{ base: 'none', md: 'flex' }}  ml={10} mr={"190px"} /* Ajustando os links mais para dentro */>
           <Stack direction="row"  spacing={6} /* Ajustando o espaçamento entre os links */>
-            <Link href="/" color="gray.800" _hover={{ color: 'blue.500' }}>
+            <Link href="/" color="white" _hover={{ color: 'blue.500' }}>
               Home
             </Link>
-            <Link href="/about" color="gray.800" _hover={{ color: 'blue.500' }}>
+            <Link href="/" color="white" _hover={{ color: 'blue.500' }}>
               About
             </Link>
 
-            <Link href="/contact" color="gray.800" _hover={{ color: 'blue.500' }}>
+            <Link href="/" color="white" _hover={{ color: 'blue.500' }}>
               Contact
             </Link>
-            <Link href="/login" color="gray.800" _hover={{ color: 'blue.500' }}>
-              Login
-            </Link>
+            
           </Stack>
         </Flex>
       </Flex>
@@ -50,20 +49,18 @@ export default function Navbar() {
       {isOpen && (
         <Box pb={4} display={{ md: 'none' }}>
           <Stack as="nav" spacing={4}>
-            <Link href="/" color="gray.800" _hover={{ color: 'blue.500' }}>
+            <Link href="/" color="white" _hover={{ color: 'blue.500' }}>
               Home
             </Link>
-            <Link href="/" color="gray.800" _hover={{ color: 'blue.500' }}>
+            <Link href="/" color="white" _hover={{ color: 'blue.500' }}>
               About
             </Link>
 
-            <Link href="/Contact" color="gray.800" _hover={{ color: 'blue.500' }}>
+            <Link href="/" color="white" _hover={{ color: 'blue.500' }}>
               Contact
             </Link>
 
-            <Link href="/login" color="gray.800" _hover={{ color: 'blue.500' }}>
-              Login
-            </Link>
+
           </Stack>
 
           

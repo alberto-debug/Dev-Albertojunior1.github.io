@@ -9,11 +9,9 @@ const Home = () => {
     <div className="home">
       <HomePage/>
       <Banner/>
-      {/* Outros componentes ou conteúdo da página */}
       <FeaturesSection/>
-
       <Footer/>
-      {/* Você pode adicionar mais conteúdo aqui */}
+      
     </div>
   );
 };

@@ -1,75 +1,65 @@
 import React from 'react';
-import { Box, Button, Heading, Text, Flex, Image, Link } from "@chakra-ui/react";
-import { Smartphone } from 'react-feather'; // Ícone do Smartphone
-import { color } from 'framer-motion';
+import { Box, Heading, Text, Flex, Image, Link } from "@chakra-ui/react";
+import { GitHub, Linkedin } from 'react-feather'; // Ícones do GitHub e LinkedIn
+import image from './images/image.png'; // Importa a imagem
 
 export default function Banner() {
   return (
-    <Box position="relative" bg="orange.400" color="white" overflow="hidden" py={{ base: 12, md: 24, lg: 32, xl: 48 }}>
+    <Box position="relative" bg="black" color="white" overflow="hidden" py={{ base: 6, md: 12, lg: 16, xl: 24 }}>
       <Flex
         maxW="1200px"
         mx="auto"
         px={{ base: 4, md: 6 }}
-        flexDirection={{ base: "column", sm: "row" }}
+        flexDirection={{ base: "column", md: "row" }} // Alinha em coluna no celular, em linha no desktop
         alignItems="center"
-        textAlign={{ base: "center", sm: "left" }} // Texto centralizado em telas pequenas
+        textAlign={{ base: "center", md: "left" }}
         spacing={4}
       >
-        {/* QR Code image */}
-        <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          bg="transparent" // Fundo transparente
-          borderRadius="md"
-          p={4}
-          mr={{ base: 0, sm: "50px" }}
-          width={{ base: "220px", sm: "250px", md: "350px", lg: "350px" }} // Tamanho responsivo do QR Code
-          height="auto"
-        >
-          {/* Replace the src with the actual QR code link */}
-          <Image
-            src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://example.com"
-            alt="QR Code"
-            width="100%" // Deixa a imagem responsiva
-            height="100%"
-          />
-        </Box>
-
-        <Box spacing={2} mt={{ base: 6, sm: 0 }} textAlign={{ base: "center", sm: "left" }}>
+        {/* Texto à esquerda */}
+        <Box spacing={2} textAlign={{ base: "center", md: "left" }} mb={{ base: 6, md: 0 }}>
           <Heading
             as="h1"
             fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }}
             fontWeight="bold"
             mb={4}
           >
-            Scan, Order, and Pay with Ease
+            Hello,
           </Heading>
-          <Text fontSize={{ base: "md", md: "xl" }} color="gray.200" maxW="700px" mx="auto" mb={6}>
-            Revolutionize your dining experience with our QR code menu and payment app.
+          <Text fontSize={{ base: "md", md: "xl" }} color="gray.200" maxW="700px" mx="auto" mb={8}>
+            This is ALBERTO JUNIOR, I'm a Professional Software Developer.
           </Text>
-
-          {/* Flex container for buttons - agora abaixo da descrição */}
-          <Flex mt={4} gap={4} flexDirection={{ base: "column", sm: "row" }} justifyContent="center" alignItems="center">
-            <Button bg="black" color="white" _hover={{ bg: "gray.700" }} px={8} fontSize={{ base: "sm", sm: "md" }}>
-              <Smartphone className="mr-2 h-4 w-4" /> Download for iOS
-            </Button>
-            <Button bg="black" color="white" _hover={{ bg: "gray.700" }} px={8} fontSize={{ base: "sm", sm: "md" }}>
-              <Smartphone className="mr-2 h-4 w-4" /> Download for Android
-            </Button>   
-
-            {/* Botão adicional centralizado */}
-            <Link href="/dashboard" bg="black" color="white"
-                  border="1px solid black" boxShadow="0px -6px 15px rgba(0, 0, 0, 0.2)"
-                  fontWeight="bold" _hover={{ bg: "#FF7622" }} borderRadius={"8px"}
-                  px={8} height="40px" lineHeight="40px" textAlign="center"
-                  fontSize={{ base: "sm", sm: "md" }} display="inline-block">
-                      Menu
+          
+          {/* Ícones de redes sociais */}
+          <Flex gap={4} justifyContent={{ base: "center", md: "flex-start" }} wrap="wrap"> {/* Adiciona wrap para quebrar em telas menores */}
+            <Link href="https://github.com/Dev-Albertojunior1" isExternal>
+              <GitHub size={32} color="pink" /> {/* Cor do ícone do GitHub */}
             </Link>
+            <Link href="https://linkedin.com/in/alberto-juniorr" isExternal>
+              <Linkedin size={32} color="#0077b5" /> {/* Cor do ícone do LinkedIn */}
+            </Link>
+          </Flex>
+        </Box>
 
-
-          </Flex>            
-
+        {/* Imagem à direita */}
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          bg="transparent" // Fundo transparente
+          borderRadius="full" // Imagem em formato circular
+          p={4}
+          width={{ base: "220px", sm: "300px", md: "400px", lg: "400px" }} // Tamanho responsivo da imagem
+          height={{ base: "220px", sm: "300px", md: "400px", lg: "400px" }} // Altura igual à largura para formato circular
+          mt={{ base: -10, sm: 0 }} // Levanta a imagem em telas pequenas
+        >
+          <Image
+            src={image}
+            alt="ALBERTO JUNIOR"
+            borderRadius="full" // Para deixar a imagem circular
+            width="100%" // Deixa a imagem responsiva
+            height="100%" // A altura deve ser 100% da altura do box
+            objectFit="cover" // Mantém a proporção da imagem
+          />
         </Box>
       </Flex>
 

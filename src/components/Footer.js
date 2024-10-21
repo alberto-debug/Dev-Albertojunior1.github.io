@@ -6,7 +6,7 @@ export default function Footer() {
     <Box       
       as="footer"
       w="full"    
-      bg={"orange"}         
+      bg={"black"}         
       py={6}
       px={{ base: 4, md: 6 }}       
       borderTop="1px solid"
@@ -16,8 +16,8 @@ export default function Footer() {
       alignItems="center"
       gap={2}  
     >
-      <Text fontSize="xs" color="Black">
-        © 2024 Deli. All rights reserved.
+      <Text fontSize="xs" color="white">
+        © 2024 Alberto. All rights reserved.
       </Text>
       <Flex ml={{ sm: 'auto' }} color={"grey"} gap={{ base: 4, sm: 6 }}>
         <Link fontSize="xs" _hover={{ textDecoration: 'underline' }} href="#">
